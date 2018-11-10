@@ -1,0 +1,143 @@
+/*Importar fuente personalizada*/
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400');
+
+
+* {
+    margin: 0 ; padding 0; box-sizing: border-box; 
+}
+
+body{
+    font-family: 'Lato', 'Arial', sans-serif;
+}
+
+
+/*Definición de CSS variables*/
+:root{
+    --c-primario: #6B0C22;
+    --c-secundario: #D9042B;
+    --c-terciario: #588C8C;
+    --c-claro: #F4CB89;
+    --c-oscuro: #011C26;
+
+    /* Dimension del iframe */
+    --iframe-width: 650px;
+    --iframe-heigth: 450px;
+}
+
+/*=======================>Layout de la aplicación con css grid<======================*/
+
+.contenedor{
+    background: var(--c-primario);
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto 1fr 50px; 
+    overflow-x: hidden;
+}
+
+.header{
+    background: var(--c-secundario);
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+}
+
+.menu{
+    background: var(--c-claro);
+    display: none;
+}
+
+.main{
+    background: var(--c-terciario);
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+}
+
+.footer{
+    background: var(--c-claro);
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+}
+
+/*==========================================================*/
+
+/* Estilos para el contenido principal */
+.main{
+    padding: 1em;
+}
+
+.main .instruccion {
+    width: 90%;
+    margin: 0 auto;
+    padding: 5px;
+    border-radius: 5px;
+    border: 5px solid var(--c-primario);
+    background: var(--c-claro);
+}
+.main .instruccion p{
+    margin: 0; padding: 0;
+    text-align: center;
+    font-weight: bold;
+}
+
+.main .contenedor-iframe{
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    background: var(--c-oscuro);
+    margin-top: 0.5em;
+    overflow: auto;
+}
+
+.main .contenedor-iframe iframe{
+    height: var(--iframe-heigth);
+    width: var(--iframe-width);
+}
+
+/* Estilos para la barra de navegación */
+.nav *{
+    color: var(--c-oscuro);
+}
+.nav .nav-links li{
+    text-align: center;
+    margin: 0 auto;
+    transition: background 1s;
+}
+.nav .nav-links li:hover{
+    background: var(--c-claro);
+}
+.nav .nav-links li a{
+    display: block;
+    padding: 5px;
+    font-weight: bold;
+}
+.nav .nav-open {
+    display: inline-block;
+    margin: 5px auto 5px 15px;
+    
+}
+.nav{
+    position: relative;
+}
+
+/* Iconos grandes */
+.icono-grande{
+    font-size: 25px;
+    cursor: pointer;
+}
+.nav .nav-toggle{
+    position: absolute;
+    top: 5px;
+    right: 15px;
+
+}
+
+/*Utilidad: Normalizar los links de las listas*/
+.lista-links{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.lista-links li a{
+    text-decoration: none;
+}
